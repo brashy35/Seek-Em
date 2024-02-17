@@ -338,7 +338,7 @@ function shareResults() {
 
     // Check the game state
     if (gameState === "won") {
-        resultText = `Find-It | ${finalFormattedTime}`; // Final formatted time for wins
+        resultText = `Seem 'Em | ${finalFormattedTime}`; // Final formatted time for wins
     } else if (gameState === "gameOver") {
         resultText = "Seek 'Em | X"; // Use an "X" for game over scenarios
     }
