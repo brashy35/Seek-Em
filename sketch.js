@@ -340,7 +340,7 @@ function shareResults() {
     if (gameState === "won") {
         resultText = `Find-It | ${finalFormattedTime}`; // Final formatted time for wins
     } else if (gameState === "gameOver") {
-        resultText = "Find-It | X"; // Use an "X" for game over scenarios
+        resultText = "Seek 'Em | X"; // Use an "X" for game over scenarios
     }
 
     let foundEmojiString = foundEmojis.map(emoji => emoji.emoji).join(' '); // Creates a string of found emojis
