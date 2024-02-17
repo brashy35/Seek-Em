@@ -1,5 +1,5 @@
 let emojis = []; // Array to hold both target and clutter emojis
-let lives = 4; // Number of lives
+let lives = 3; // Number of lives
 let gameState = "start"; // Possible states: "start", "running", "gameOver", "won"
 let targetEmojis = ['👽','👾','👩🏻‍🚀','🧑🏽‍🚀','👨🏿‍🚀']; // Emojis players must find 
 let clutterEmojis = []; // Clutter emojis
@@ -58,7 +58,7 @@ function displayUI() {
 
 function displayStartScreen() {
     fill(0);
-    textSize(28);
+    textSize(100);
     textAlign(CENTER, CENTER);
     text("Welcome to Find-It. Ready to begin?", width / 2, height / 2 - 100);
     drawStartButton();
