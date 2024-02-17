@@ -28,8 +28,18 @@ function setup() {
 function draw() {
     background(255);
     
+    // To change arrow to hand when hovering buttons
+    let startButtonX = width / 2 - 95;
+    let startButtonY = height / 2;
+    let startButtonWidth = 200;
+    let startButtonHeight = 50;
+
+    let shareButtonX = width / 2 - 95;
+    let shareButtonY = height / 2 + 100;
+    let shareButtonWidth = 200;
+    let shareButtonHeight = 50;
+    
     if (gameState === "running") {
-        // Define the game area boundaries
         let gameAreaTop = 84;
         let gameAreaBottom = height;
         
@@ -41,13 +51,33 @@ function draw() {
     } else {
         if (gameState === "start") {
             displayStartScreen();
-        } else if (gameState === "gameOver") {
-            displayGameOver();
-        } else if (gameState === "won") {
-            displayGameWon();
+        } else if (gameState === "gameOver" || gameState === "won") {
+            // For game over and game won states, check if mouse is over the "Share Results" button
+            if (mouseX > shareButtonX && mouseX < shareButtonX + shareButtonWidth &&
+                mouseY > shareButtonY && mouseY < shareButtonY + shareButtonHeight) {
+                cursor(HAND);
+            } else {
+                cursor(ARROW);
+            }
+            if (gameState === "gameOver") {
+                displayGameOver();
+            } else {
+                displayGameWon();
+            }
+        }
+
+        // For start screen, check if mouse is over the "Start" button to change arrow to hand
+        if (gameState === "start") {
+            if (mouseX > startButtonX && mouseX < startButtonX + startButtonWidth &&
+                mouseY > startButtonY && mouseY < startButtonY + startButtonHeight) {
+                cursor(HAND);
+            } else {
+                cursor(ARROW);
+            }
         }
     }
 }
+
 
 function displayUI() {
     displayLives();
@@ -60,7 +90,7 @@ function displayStartScreen() {
     fill(0);
     textSize(28);
     textAlign(CENTER, CENTER);
-    text("Welcome to Seek 'Em. Ready to begin?", width / 2, height / 2 - 100);
+    text("Welcome to Find-It. Ready to begin?", width / 2, height / 2 - 100);
     drawStartButton();
 }
 
@@ -338,9 +368,9 @@ function shareResults() {
 
     // Check the game state
     if (gameState === "won") {
-        resultText = `Seem 'Em | ${finalFormattedTime}`; // Final formatted time for wins
+        resultText = `Find-It | ${finalFormattedTime}`; // Final formatted time for wins
     } else if (gameState === "gameOver") {
-        resultText = "Seek 'Em | X"; // Use an "X" for game over scenarios
+        resultText = "Find-It | X"; // Use an "X" for game over scenarios
     }
 
     let foundEmojiString = foundEmojis.map(emoji => emoji.emoji).join(' '); // Creates a string of found emojis
