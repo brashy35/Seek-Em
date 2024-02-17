@@ -1,5 +1,5 @@
 let emojis = []; // Array to hold both target and clutter emojis
-let lives = 3; // Number of lives
+let lives = 4; // Number of lives
 let gameState = "start"; // Possible states: "start", "running", "gameOver", "won"
 let targetEmojis = ['👽','👾','👩🏻‍🚀','🧑🏽‍🚀','👨🏿‍🚀']; // Emojis players must find 
 let clutterEmojis = []; // Clutter emojis
