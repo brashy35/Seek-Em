@@ -60,7 +60,7 @@ function displayStartScreen() {
     fill(0);
     textSize(28);
     textAlign(CENTER, CENTER);
-    text("Welcome to Find-It. Ready to begin?", width / 2, height / 2 - 100);
+    text("Welcome to Seek 'Em. Ready to begin?", width / 2, height / 2 - 100);
     drawStartButton();
 }
 
