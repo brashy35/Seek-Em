@@ -58,7 +58,7 @@ function displayUI() {
 
 function displayStartScreen() {
     fill(0);
-    textSize(100);
+    textSize(28);
     textAlign(CENTER, CENTER);
     text("Welcome to Find-It. Ready to begin?", width / 2, height / 2 - 100);
     drawStartButton();
