@@ -1,0 +1,60 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0; /* Optional: Change the background color */
+}
+
+canvas {
+    display: block; /* Prevents extra space below the canvas */
+    max-width: 100%; /* Ensures the canvas is not larger than the viewport */
+    border: 1px solid #ddd; /* Optional: Adds a border around the canvas */
+}
+
+/* General styles for UI elements */
+.ui-text {
+    font-size: 1rem; /* Default font size for UI text */
+    text-align: center; /* Center align text */
+}
+
+.ui-button {
+    padding: 10px 20px; /* Padding inside buttons */
+    border: none; /* No border for buttons */
+    background-color: #007bff; /* Example button background color */
+    color: white; /* Text color for buttons */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    border-radius: 5px; /* Rounded corners for buttons */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    canvas {
+        transform: scale(0.8); /* Shrinks the canvas */
+        transform-origin: top center; /* Ensures the canvas shrinks towards the center */
+    }
+
+    .ui-text {
+        font-size: 0.8rem; /* Smaller font size for UI text on small screens */
+    }
+
+    .ui-button {
+        padding: 8px 16px; /* Slightly smaller padding for buttons */
+    }
+}
+
+/* Media query for even smaller screens */
+@media (max-width: 480px) {
+    canvas {
+        transform: scale(0.6); /* Further shrink the canvas for very small screens */
+    }
+
+    .ui-text {
+        font-size: 0.7rem; /* Even smaller font size for UI text */
+    }
+
+    .ui-button {
+        padding: 6px 12px; /* Reduce padding for buttons even more */
+    }
+}
